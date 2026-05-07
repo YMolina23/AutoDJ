@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <defs>
+    <style>
+      .bg { fill: #0b1220; }
+      .panel { fill: #111b33; stroke: #2d3a61; stroke-width: 2; rx: 18; }
+      .card { fill: #152447; stroke: #2d3a61; stroke-width: 2; rx: 14; }
+      .title { fill: #e8eefc; font-family: "Segoe UI", Arial, sans-serif; font-size: 26px; font-weight: 700; }
+      .label { fill: #c5d3f8; font-family: "Segoe UI", Arial, sans-serif; font-size: 16px; }
+      .small { fill: #93a6d9; font-family: "Segoe UI", Arial, sans-serif; font-size: 13px; }
+      .accent { fill: #ffb454; }
+      .accent2 { fill: #4ad2ff; }
+      .accent3 { fill: #7bff9a; }
+      .line { stroke: #3c4b75; stroke-width: 3; }
+      .arrow { fill: #3c4b75; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" class="arrow" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="700" />
+
+  <text class="title" x="60" y="70">AutoDJ (LangGraph) - Mockup</text>
+  <text class="small" x="60" y="95">Pipeline de agentes: ingesta, BPM, orden, mezcla, exportacion y reproduccion</text>
+
+  <!-- Left column: Inputs -->
+  <rect class="panel" x="60" y="130" width="320" height="500" />
+  <text class="label" x="85" y="170">Entrada</text>
+  <rect class="card" x="85" y="190" width="270" height="90" />
+  <text class="label" x="105" y="225">Carpeta Canciones</text>
+  <text class="small" x="105" y="248">.mp3 / .wav / .flac</text>
+
+  <rect class="card" x="85" y="300" width="270" height="120" />
+  <text class="label" x="105" y="335">Parametros</text>
+  <text class="small" x="105" y="360">Segundos por cancion</text>
+  <rect x="105" y="372" width="120" height="16" fill="#0b1220" rx="6" />
+  <text class="small" x="110" y="385">40s</text>
+  <text class="small" x="105" y="405">Crossfade (s)</text>
+  <rect x="105" y="417" width="120" height="16" fill="#0b1220" rx="6" />
+  <text class="small" x="110" y="430">8s</text>
+
+  <rect class="card" x="85" y="440" width="270" height="160" />
+  <text class="label" x="105" y="475">Opciones</text>
+  <text class="small" x="105" y="500">Analisis BPM (90s)</text>
+  <text class="small" x="105" y="525">Reproducir al final</text>
+  <rect x="105" y="538" width="18" height="18" fill="#0b1220" stroke="#3c4b75" stroke-width="2" />
+
+  <!-- Middle column: Agents -->
+  <rect class="panel" x="440" y="130" width="320" height="500" />
+  <text class="label" x="465" y="170">Agentes (LangGraph)</text>
+
+  <rect class="card" x="465" y="190" width="270" height="70" />
+  <text class="label" x="485" y="230">Ingesta</text>
+  <circle class="accent" cx="705" cy="225" r="8" />
+
+  <rect class="card" x="465" y="280" width="270" height="70" />
+  <text class="label" x="485" y="320">Analisis BPM</text>
+  <circle class="accent2" cx="705" cy="315" r="8" />
+
+  <rect class="card" x="465" y="370" width="270" height="70" />
+  <text class="label" x="485" y="410">Ordenamiento</text>
+  <circle class="accent3" cx="705" cy="405" r="8" />
+
+  <rect class="card" x="465" y="460" width="270" height="70" />
+  <text class="label" x="485" y="500">Mezcla y Crossfade</text>
+  <circle class="accent" cx="705" cy="495" r="8" />
+
+  <rect class="card" x="465" y="550" width="270" height="70" />
+  <text class="label" x="485" y="590">Exportar / Play</text>
+  <circle class="accent2" cx="705" cy="585" r="8" />
+
+  <!-- Right column: Outputs -->
+  <rect class="panel" x="820" y="130" width="320" height="500" />
+  <text class="label" x="845" y="170">Salida</text>
+
+  <rect class="card" x="845" y="190" width="270" height="110" />
+  <text class="label" x="865" y="230">Mix final</text>
+  <text class="small" x="865" y="255">output/mix.wav</text>
+  <rect x="865" y="265" width="220" height="10" fill="#0b1220" rx="6" />
+
+  <rect class="card" x="845" y="320" width="270" height="110" />
+  <text class="label" x="865" y="360">Reporte BPM</text>
+  <text class="small" x="865" y="385">output/mix_report.json</text>
+
+  <rect class="card" x="845" y="450" width="270" height="110" />
+  <text class="label" x="865" y="490">Reproduccion</text>
+  <text class="small" x="865" y="515">ffplay / pydub</text>
+
+  <!-- Flow arrows -->
+  <line class="line" x1="380" y1="250" x2="440" y2="250" marker-end="url(#arrow)" />
+  <line class="line" x1="380" y1="360" x2="440" y2="360" marker-end="url(#arrow)" />
+  <line class="line" x1="380" y1="500" x2="440" y2="500" marker-end="url(#arrow)" />
+  <line class="line" x1="760" y1="250" x2="820" y2="250" marker-end="url(#arrow)" />
+  <line class="line" x1="760" y1="500" x2="820" y2="500" marker-end="url(#arrow)" />
+</svg>
