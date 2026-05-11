@@ -1,6 +1,23 @@
 # AutoDJ (LangGraph)
 
-Proyecto que analiza el BPM de tus canciones, ordena los temas para que los cambios sean suaves y genera una mezcla con crossfade.
+AutoDJ es un pipeline de agentes en LangGraph que toma una carpeta de canciones, estima su BPM, ordena la secuencia para transiciones suaves y exporta una mezcla con crossfade junto con un reporte JSON.
+
+## Qué hace
+
+- Ingesta archivos de audio desde una carpeta.
+- Analiza BPM y duracion por tema.
+- Planifica el orden para minimizar saltos de BPM.
+- Mezcla segmentos con crossfade y exporta el resultado.
+- Genera un reporte JSON con metadatos de cada pista.
+
+## Agentes (LangGraph)
+
+El flujo se modela con `StateGraph` y cuatro agentes, cada uno responsable de un paso del estado:
+
+- `ingest_agent`: lista archivos y prepara rutas de entrada.
+- `bpm_agent`: estima BPM y duración por archivo.
+- `plan_agent`: ordena pistas para cambios suaves de BPM.
+- `mix_agent`: construye la mezcla, exporta el audio y el reporte.
 
 ## Requisitos
 
@@ -31,6 +48,11 @@ python main.py --songs-dir Canciones --seconds-per-track 40 --crossfade-sec 8 --
 
 - output/mix.mp3 (por defecto)
 - output/mix_report.json
+
+## Datos incluidos
+
+- En la rama `main`, la carpeta `Canciones` se distribuye comprimida para descargar.
+- En `output/` se incluye un `mix.wav` de ejemplo: en `main` es la version sin beat sync y en `feature/beat-sync` es la version con beat sync.
 
 ## Informe JSON
 
