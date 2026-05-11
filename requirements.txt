@@ -6,4 +6,4 @@ numpy>=1.26.0
 scipy>=1.11.0
 
 # External dependency (not installable via pip):
-# - ffmpeg available on PATH (ffplay is required only for --play)
+# - ffmpeg available on PATH

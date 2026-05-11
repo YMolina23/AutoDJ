@@ -1,4 +1,5 @@
 # Local audio files and artifacts
+.env
 Canciones/
 **/__pycache__/
 *.pyc

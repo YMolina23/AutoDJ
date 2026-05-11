@@ -5,7 +5,6 @@ from typing import Iterable, List, Tuple
 import librosa
 import numpy as np
 from pydub import AudioSegment, effects
-from pydub.playback import play
 
 from .models import TrackInfo
 
@@ -99,10 +98,6 @@ def export_mix(mix: AudioSegment, output_path: str) -> None:
 
 def load_audio(path: str) -> AudioSegment:
     return AudioSegment.from_file(path)
-
-
-def play_mix(mix: AudioSegment) -> None:
-    play(mix)
 
 
 def write_report(tracks: Iterable[TrackInfo], report_path: str) -> None:
